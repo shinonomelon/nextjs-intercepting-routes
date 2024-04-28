@@ -10,12 +10,11 @@ export default async function PhotoDetailPage({
   const res = await fetch(`${API_URL}/${photoId}`);
   const photo = await res.json();
   return (
-    <main>
-      <div>
-        <div>photo detail information</div>
+    <main className="p-4">
+      <div className="mb-4">
+        <h2 className="text-2xl font-bold">{photo.title}</h2>
       </div>
       <Image src={photo.url} alt={photo.title} width={600} height={600} />
-      <Link href="/">back to top</Link>
     </main>
   );
 }

@@ -7,8 +7,8 @@ export default async function Home() {
   const photos: Photo[] = await res.json();
 
   return (
-    <main className="mx-auto w-full p-4">
-      <ul className="flex gap-4 flex-wrap justify-start mx-auto">
+    <main className="p-4">
+      <ul className="flex gap-4 flex-wrap lg:justify-start justify-center md:max-w-[62rem] mx-auto">
         {photos.slice(0, 20).map((photo) => (
           <li key={photo.id}>
             <Link href={`/photo/${photo.id}`} prefetch>
